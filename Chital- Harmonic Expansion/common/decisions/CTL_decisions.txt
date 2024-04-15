@@ -801,51 +801,53 @@ cost = 50
 	add_manpower = 250	
 }
 }
-CTL_CTH_Trading = {
-icon = GFX_decision_gre_investment_decisions
+	CTL_CTH_Trading = {
+		icon = GFX_decision_gre_investment_decisions
 		visible = {
 			original_tag = CTL
 			has_completed_focus = CTL_war_plan_white_and_black
 		}
 		available = {
-		OR = {
-					CTH = { 
-				is_subject_of = CTL
-				is_in_faction_with = CTL
-		}
-					CVA = { 
-				is_subject_of = CTL
-				is_in_faction_with = CTL
-		}
+			OR = {
+				CTH = { 
+					is_subject_of = CTL
+					is_in_faction_with = CTL
+				}
+				CVA = { 
+					is_subject_of = CTL
+					is_in_faction_with = CTL
+				}
+			}
 		}
 		fire_only_once = yes
 		ai_will_do = {
 			factor = 50
 		}	
-cost = 75
+		cost = 75
 		complete_effect = {
-if = {
-limit = {
- CVA = { exists = yes}
-}
-add_ideas = CTL_CTH_trade
-CVA = {
-	add_ideas = CTL_CTH_trade
-}}	
-else = {
-limit = {
-CTH = {
-exists = yes
-}
-}
-add_ideas = CTL_CTH_trade
-CTH = {
-	add_ideas = CTL_CTH_trade
-}}
-set_country_flag = CTL_CTH_trade
-}	
-}
-}
+		if = {
+			limit = {
+				CVA = { exists = yes}
+			}
+			add_ideas = CTL_CTH_trade
+			CVA = {
+				add_ideas = CTL_CTH_trade
+			}
+		}	
+		else_if = {
+			limit = {
+				CTH = {
+				exists = yes
+				}
+			}
+			add_ideas = CTL_CTH_trade
+			CTH = {
+				add_ideas = CTL_CTH_trade
+			}
+		}
+			set_country_flag = CTL_CTH_trade
+		}	
+	}
 CTL_CTH_trading_dock = {
 icon = GFX_decision_generic_merge_plant_ship
 		visible = {
