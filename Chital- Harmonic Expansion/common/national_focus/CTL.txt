@@ -9608,7 +9608,7 @@ CVA = {diplomatic_relation = {
     active = yes}}
 set_country_flag = CTL_CTH_trade
 }
-else = {
+else_if = {
 limit = {
 CTH = {
 exists = yes
@@ -9634,7 +9634,7 @@ CTH = {diplomatic_relation = {
     country = CTL
     relation = docking_rights
     active = yes}}
-}	
+}
 	}
 }
 shared_focus = {
@@ -11104,7 +11104,7 @@ limit = {
     }
 }
 }		
-else = {
+else_if = {
 limit = {
 OLE = {
 has_government = fascism}	
@@ -12281,7 +12281,7 @@ shared_focus = {
 	y = 7
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus CTL_Olenia"
-add_ideas CTL_equus_harmony
+		add_ideas = CTL_equus_harmony
 	}
 }
 shared_focus = {
@@ -12307,7 +12307,7 @@ shared_focus = {
 	y = 7
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus CTL_Olenia"
-add_ideas CTL_equus_friendship
+add_ideas = CTL_equus_friendship
 
 	}
 }
@@ -12351,7 +12351,7 @@ limit = {
     }
 }
 }		
-else = {
+else_if = {
 limit = {
 EQS = {
 has_government = fascism}	
